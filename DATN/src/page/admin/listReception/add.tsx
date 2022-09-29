@@ -29,159 +29,50 @@ const Add = (props: AddProps) => {
   // Call API
   return (
     <div>
-      
-      <strong className=" text-xl uppercase pt-4">Thêm nhân viên</strong> <br />
-
+    <div className="bg-white">
+      <strong className=" text-xl uppercase pt-4">Thêm gói tập</strong> <br />
       <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-group mb-6">
-            <input type="text" {...register('name')} className="form-control block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-              placeholder="Name" />
-          </div>
-          <div className="form-group mb-6">
-            <input type="number"  {...register('code')} className="form-control block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              placeholder="Code" />
-          </div>
+      <form id="form-add-pro" onSubmit={handleSubmit(onSubmit)}>
+                <div className="mb-3">
+                    <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Receptionist name<span className="text-red-500">*</span></label><br />
+                    <input type="text" {...register('name')} className="border border-gray-300 p-2 w-full" id="name" />
+                </div>
 
-          <div className="form-group mb-6">
-            <textarea
-              className="
-          form-control
-          block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-        "
-
-              placeholder="image" {...register('img')}
-            ></textarea>
-          </div>
-
-          <div className="form-group mb-6">
-            <input type="number"  {...register('phone')} className="form-control block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              placeholder="Phone" />
-          </div>
-          <div className="form-group mb-6">
-            <input type="number"  {...register('age')} className="form-control block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              placeholder="Age" />
-          </div>
-          <div className="form-group mb-6">
-            <input type="string"  {...register('address')} className="form-control block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              placeholder="Address" />
-          </div>
-          <div className="form-group mb-6">
-            <input type="string"  {...register('job')} className="form-control block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              placeholder="Job" />
-          </div>    
-
-          <button type="submit" className="
-        w-full
-        px-6
-        py-2.5
-        bg-blue-600
-        text-white
-        font-medium
-        text-xs
-        leading-tight
-        uppercase
-        rounded
-        shadow-md
-        hover:bg-blue-700 hover:shadow-lg
-        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-        active:bg-blue-800 active:shadow-lg
-        transition
-        duration-150
-ease-in-out">Send</button>
-        </form>
+                <div className="mb-3 grid grid-cols-2 gap-6">
+                    <div>
+                        <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Age<span className="text-red-500">*</span></label><br />
+                        <input type="number" {...register('age')} className="border border-gray-300 p-2 w-full" id="age" />
+                    </div>
+                    <div>
+                        <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Image<span className="text-red-500">*</span></label><br />
+                        <input type="text" {...register('img')} className="border border-gray-300 p-2 w-full" id="image" />
+                    </div>
+                </div>
+                <div className="mb-3 grid grid-cols-2 gap-6">
+                    <div>
+                        <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Receptionist code<span className="text-red-500">*</span></label><br />
+                        <input type="number" {...register('code')} className="border border-gray-300 p-2 w-full" id="code receptionist" />
+                    </div>
+                    <div>
+                        <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Phone number<span className="text-red-500">*</span></label><br />
+                        <input type="number" {...register('phone')} className="border border-gray-300 p-2 w-full" id="phone" />
+                    </div>
+                </div>
+                <div className="mb-3">
+                    <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Address<span className="text-red-500">*</span></label><br />
+                    <textarea {...register('address')} className="w-full sec p-3 h-60 border border-gray-300 " id="act" placeholder="address" defaultValue={""} />
+                </div>
+                <div className="mb-3">
+                    <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Job<span className="text-red-500">*</span></label><br />
+                    <textarea {...register('job')} className="w-full sec p-3 h-60 border border-gray-300 " id="act" placeholder="job" defaultValue={""} />
+                </div>
+                <div className="flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5">
+                    <button className="w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2">Cancel</button>
+                    <button className="w-auto bg-red-600 hover:bg-blue-500 rounded-lg shadow-xl font-medium text-white px-4 py-2">Add</button>
+                </div>
+            </form>
       </div>
+    </div>
     </div>
   )
 }

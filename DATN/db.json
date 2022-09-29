@@ -1,7 +1,7 @@
 {
   "receptions": [
     {
-      "name": "mai văn minh ",
+      "name": "Lê Viết Thi",
       "code": "17968",
       "phone": "0977187559",
       "age": "20",
@@ -11,7 +11,7 @@
       "id": 1
     },
     {
-      "name": "mai văn minh ",
+      "name": "Trần Mạnh Quân",
       "code": "17968",
       "phone": "0977187559",
       "age": "20",
@@ -21,7 +21,7 @@
       "id": 2
     },
     {
-      "name": "mai văn minh ",
+      "name": "Nguyễn Quang Huy",
       "code": "17968",
       "phone": "0977187559",
       "age": "20",
@@ -31,7 +31,7 @@
       "id": 3
     },
     {
-      "name": "mai văn minh ",
+      "name": "Nguyễn Tiến Hoàng",
       "code": "17968",
       "phone": "0977187559",
       "age": "20",
@@ -41,17 +41,17 @@
       "id": 4
     },
     {
-      "name": "fixer",
+      "name": "Lê Văn Quân",
       "code": "12345",
       "img": "https://res.cloudinary.com/dixysmopg/image/upload/v1648828658/4_gjmyxe.jpg",
       "phone": "0123456789",
-      "age": "30",
+      "age": "20",
       "address": "hanoi",
       "job": "nhân viên",
       "id": 5
     },
     {
-      "name": "tú1111111",
+      "name": "Nguyễn Anh Tú",
       "code": "12345678",
       "img": "https://res.cloudinary.com/dixysmopg/image/upload/v1648828658/4_gjmyxe.jpg",
       "phone": "0334671315",
@@ -61,14 +61,14 @@
       "id": 6
     },
     {
-      "name": "minhmai11",
-      "code": "32145151",
+      "name": "Mai Văn Minh",
+      "age": "20",
       "img": "https://res.cloudinary.com/dixysmopg/image/upload/v1648828658/4_gjmyxe.jpg",
-      "phone": "12345678",
-      "age": "40",
-      "address": "quoc oai",
-      "job": "nhân viên kiểm toán",
-      "id": 8
+      "code": "13062002",
+      "phone": "0977187559",
+      "address": "phú diễn bắc từ liêm hà nội",
+      "job": "nhân vien lễ tân",
+      "id": 9
     }
   ]
 }

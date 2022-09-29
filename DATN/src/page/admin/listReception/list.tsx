@@ -9,7 +9,7 @@ type ReceptionistRemove = {
 const List = (props : ReceptionistRemove)=>{
     return(
         <div>
-            <h2 className='mx-auto text-blue-600 text-4xl'>Danh sách nhân viên lễ tân</h2>
+            <h2 className='mx-auto text-blue-600 text-4xl'>Receptionists List</h2>
             <div className="flex flex-col">
                 <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -61,7 +61,7 @@ const List = (props : ReceptionistRemove)=>{
                                             <td className='border text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap'>{item.address}</td>
                                             <td className='border text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap'>{item.job}</td>
                                                <div className="mt-4">
-                                               <Link className='rounded-md bg-blue-400 text-white mt-20' to={`/receptions/${item.id}/edit`}>UPDATE</Link>
+                                               <Link className='rounded-md bg-blue-400 text-white mt-20 mr-2' to={`/receptions/${item.id}/edit`}>UPDATE</Link>
                                                <button className="bg-red-500 text-white" onClick={() => props.onRemove(item.id)}>DELETE</button>
 
                                                </div>
