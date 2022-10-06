@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { add, list, remove, update } from './api/product'
 import './App.css'
+import AdminLayout from './layout/AdminLayout'
 import WebsiteLayout from './layout/WebsiteLayout'
 import Add from './page/admin/listProduct/Add'
 import Edit from './page/admin/listProduct/Edit'
@@ -68,6 +69,38 @@ const onHandlerUpdate = async (product:ProductType)=>{
   } catch (error) {        
   }
 }
+import Addsubject from './page/admin/subject/AddSubject'
+import Editsubject from './page/admin/subject/EditSubject'
+import ListSubject from './page/admin/subject/ListSubject'
+import HomePage from './page/HomePage'
+import { TypeSubject } from './Type/TypeSubject'
+
+function App() {
+//Subject start
+const [subjects, setSubjects] = useState<TypeSubject[]>([]);
+useEffect(() => {
+  const getSubject = async () => {
+    const { data } = await listSubject();
+    setSubjects(data);
+  };
+  getSubject();
+}, [])
+const onHandleRemoveSubject = (id: number) => {
+  if (window.confirm('Are you sure you want to remove  ?')) {
+    removeSubject(id);
+    setSubjects(subjects.filter(item => item.id !== id));
+  }
+}
+const onHandleAddSubject = async (subject: TypeSubject) => {
+  const { data } = await addSubject(subject);
+  setSubjects([...subjects, data]);
+  alert("Success!");
+}
+const onHandleUpdateSubject = async (subject: TypeSubject) => {
+  const { data } = await updateSubject(subject);
+  setSubjects(subjects.map(item => item.id == data.id ? data : item));
+}
+//Subject End
   return (
     <div className='App'>
         <Routes>
@@ -80,10 +113,21 @@ const onHandlerUpdate = async (product:ProductType)=>{
           <Route path='receptions/add' element={<Add onAdd={onhandlerAdd}/>}/> 
           <Route path='receptions/:id/edit' element={<Edit onUpdate={onHandlerUpdate}/>}/> 
           <Route path="/products">
+          <Route path='/admin' element={ <AdminLayout />}> 
+
+          </Route>
+
           <Route index element={<ProductList products={products} onRemove={onHandleremove} />} /> 
           </Route>
           <Route path='products/add' element={<Add onAdd={onhandlerAdd}/>}/>
           <Route path='products/:id/edit' element={<Edit onUpdate={onHandlerUpdate}/>}/> 
+          <Route path="admin" element={< AdminLayout />}>
+          <Route path='subject'>
+            <Route index element={<ListSubject subjects={subjects} onRemovee={onHandleRemoveSubject} />} />
+            <Route path='add' element={<Addsubject onAddSubject={onHandleAddSubject} subjects={subjects} />} />
+            <Route path=':id/edit' element={<Editsubject onUpdateSubject={onHandleUpdateSubject} subjects={subjects} />} />
+          </Route>
+        </Route>
         </Routes>
     </div>
   )
