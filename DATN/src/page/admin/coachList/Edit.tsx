@@ -5,6 +5,7 @@ import { read } from '../../../api/Coach';
 import { CoachType } from '../../../Type/CoachType';
 type CoachEditProps = {
   onUpdate: (coachs: CoachType) => void
+
 }
 type FormInputs = {
   name: string,

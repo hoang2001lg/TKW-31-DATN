@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CoachType } from '../../../Type/CoachType';
 type CoachManagerProps = {
   coachs: CoachType[];
+
   onRemove: (id: number) => void
 }
 
@@ -23,6 +24,7 @@ const List = (props:CoachManagerProps) => {
         </thead>
         <tbody>
           {props.coachs.map((item :any , index) => {
+
             return <tr>
                 <td></td>
                 <td>{index + 1}</td>
