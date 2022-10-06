@@ -5,22 +5,8 @@ type Props = {}
 
 const AdminLayout = (props: Props) => {
   return (
-    <Outlet></Outlet>
-        <header>
-            Admin
-        </header>
-        <div className="row">
-            <div className="col-2">
-                <aside>Sidebar</aside>
-            </div>
-            <div className="col-10">
-                <main>
-                    <Outlet />
-                </main>
-            </div>
-        </div>
-        
-    </div>
+    <Outlet />
+
   )
 }
 
