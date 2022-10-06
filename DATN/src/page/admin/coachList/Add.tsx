@@ -13,10 +13,10 @@ type Inputs = { // kiểu dữ liệu của từng input
 
 };
 
-type ProductAddProps = {
-  onAdd: (product: Inputs) => void
+type CoachsAddProps = {
+  onAdd: (coachs: Inputs) => void
 }
-const Add = (props: ProductAddProps) => {
+const Add = (props: CoachsAddProps) => {
   const { register, handleSubmit, formState: { errors}} = useForm<Inputs>()
   const navigate = useNavigate()
   const onSubmit: SubmitHandler<Inputs>  = (dataInput) => {
