@@ -4,7 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { read } from '../../../api/Coach';
 import { CoachType } from '../../../Type/CoachType';
 type CoachEditProps = {
-  onUpdate: (product: CoachType) => void
+  onUpdate: (coachs: CoachType) => void
+
 }
 type FormInputs = {
   name: string,

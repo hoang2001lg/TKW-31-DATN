@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+<<<<<<< HEAD
     "start": "json-server --watch db.json --port 3001",
+=======
+>>>>>>> c437a30d09fa539b5d063a2400719e51fd534878
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
