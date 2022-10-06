@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { CoachType } from '../../../Type/CoachType';
 type CoachManagerProps = {
-  products: CoachType[];
+  coachs: CoachType[];
   onRemove: (id: number) => void
 }
 
@@ -22,7 +22,7 @@ const List = (props:CoachManagerProps) => {
           <td>Hành Động</td>
         </thead>
         <tbody>
-          {props.products.map((item :any , index) => {
+          {props.coachs.map((item :any , index) => {
             return <tr>
                 <td></td>
                 <td>{index + 1}</td>
