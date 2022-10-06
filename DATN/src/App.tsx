@@ -1,54 +1,54 @@
 import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { add, list, remove, update } from './api/Coach'
+import { addSubject, listSubject, removeSubject, updateSubject } from './api/subject'
 import './App.css'
 import AdminLayout from './layout/AdminLayout'
 import WebsiteLayout from './layout/WebsiteLayout'
-import DashBoard from './page/admin/DashBoard'
-import List from './page/admin/coachList/List'
-import Add from './page/admin/coachList/Add'
-import Edit from './page/admin/coachList/Edit'
+import Addsubject from './page/admin/subject/AddSubject'
+import Editsubject from './page/admin/subject/EditSubject'
+import ListSubject from './page/admin/subject/ListSubject'
 import HomePage from './page/HomePage'
-import { CoachType } from './Type/CoachType'
+import { TypeSubject } from './Type/TypeSubject'
 
 function App() {
-  const [Coachs, setProducts] = useState<CoachType[]>([])
-  useEffect(() => {
-    const getProducts = async () => {
-        const { data } = await list();
-        setProducts(data);
-    }
-    getProducts();
-  }, []);
-
-  const onHandleAdd = async (product: any) => {
-    const {data} = await add(product);
-    setProducts([...Coachs, data]);
+//Subject start
+const [subjects, setSubjects] = useState<TypeSubject[]>([]);
+useEffect(() => {
+  const getSubject = async () => {
+    const { data } = await listSubject();
+    setSubjects(data);
+  };
+  getSubject();
+}, [])
+const onHandleRemoveSubject = (id: number) => {
+  if (window.confirm('Are you sure you want to remove  ?')) {
+    removeSubject(id);
+    setSubjects(subjects.filter(item => item.id !== id));
   }
-  const onHandleRemove = async (id: number) => {
-    remove(id);
-    setProducts(Coachs.filter(item => item.id !== id));
-  }
-  const onHandleUpdate = async (coachs: CoachType) => {
-    try {
-       const {data} = await update(coachs);
-       setProducts(Coachs.map(item => item.id === data.id ? coachs : item))
-    } catch (error) {
-      
-    }
-  }
+}
+const onHandleAddSubject = async (subject: TypeSubject) => {
+  const { data } = await addSubject(subject);
+  setSubjects([...subjects, data]);
+  alert("Success!");
+}
+const onHandleUpdateSubject = async (subject: TypeSubject) => {
+  const { data } = await updateSubject(subject);
+  setSubjects(subjects.map(item => item.id == data.id ? data : item));
+}
+//Subject End
   return (
     <>
         <Routes>
           <Route path='/' element={< WebsiteLayout/>} >
               <Route index  element={<HomePage/>} />
           </Route>
-          <Route path="/admin" element={< AdminLayout />}>
-              <Route index element = {< DashBoard />} />
-              <Route path='/admin/coach/list' element={<List onRemove={onHandleRemove} products={[]} />}/>
-              <Route path='/admin/coach/add' element={<Add onAdd={onHandleAdd} />}/>
-              <Route path='/admin/coach/edit' element={<Edit onUpdate={onHandleUpdate} />}/>
+          <Route path="admin" element={< AdminLayout />}>
+          <Route path='subject'>
+            <Route index element={<ListSubject subjects={subjects} onRemovee={onHandleRemoveSubject} />} />
+            <Route path='add' element={<Addsubject onAddSubject={onHandleAddSubject} subjects={subjects} />} />
+            <Route path=':id/edit' element={<Editsubject onUpdateSubject={onHandleUpdateSubject} subjects={subjects} />} />
           </Route>
+        </Route>
         </Routes>
     </>
   )
