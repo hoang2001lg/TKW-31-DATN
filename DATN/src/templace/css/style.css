@@ -39,7 +39,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 }
-
+header{
+	background-color: #000;
+}
 h1,
 h2,
 h3,

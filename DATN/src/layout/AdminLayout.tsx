@@ -6,6 +6,7 @@ type Props = {}
 const AdminLayout = (props: Props) => {
   return (
     <Outlet />
+
   )
 }
 
