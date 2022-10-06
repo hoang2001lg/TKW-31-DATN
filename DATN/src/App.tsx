@@ -76,6 +76,10 @@ const onHandleUpdateSubject = async (subject: TypeSubject) => {
           <Route path='/' element={< WebsiteLayout/>} >
               <Route index  element={<HomePage/>} />
           </Route>
+          <Route path='/admin' element={ <AdminLayout />}> 
+
+          </Route>
+
           <Route index element={<ProductList products={products} onRemove={onHandleremove} />} /> 
           </Route>
           <Route path='products/add' element={<Add onAdd={onhandlerAdd}/>}/>
