@@ -1,5 +1,5 @@
 export type TypeSubject = {
-    id?: number,
+    id?: any,
     name: string,
     description: string,
 }

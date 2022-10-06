@@ -1,4 +1,4 @@
-import { Receptionists } from "../type/receptionists";
+import { Receptionists } from "../Type/receptionists";
 import instance from "./instance";
 export const add = (reception:Receptionists)=>{
     const url = '/receptions';

@@ -8,11 +8,13 @@ import "../templace/css/magnific-popup.css";
 import "../templace/css/slicknav.min.css";
 import "../templace/css/style.css";
 import LogoWebSite from '../templace/img/logo.png'
+import { Link } from 'react-router-dom';
 
 type Props = {}
 
 const Header = (props: Props) => {
   return (
+    <>
     <div>
       {/* Offcanvas Menu Section Begin */}
       <div className="offcanvas-menu-overlay" />
@@ -99,7 +101,7 @@ const Header = (props: Props) => {
       </header>
     </div>
 
-    <><div>
+    <div>
   {/* Page Preloder */}
   <div id="preloder">
     <div className="loader" />

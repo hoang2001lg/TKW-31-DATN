@@ -15,7 +15,7 @@ type AddProps = {
   onAdd: (receptions: Input) => void
 }
 
-const Add = (props: AddProps) => {
+const AddProduct = (props: AddProps) => {
 
   const { register, handleSubmit, formState: { errors } } = useForm<Input>();
   const navigate = useNavigate()
@@ -72,4 +72,4 @@ const Add = (props: AddProps) => {
   )
 }
 
-export default Add
+export default AddProduct

@@ -9,6 +9,7 @@ type UpdateSubjectProps = {
   onUpdateSubject: (subject: TypeSubject) => void
 }
 type FormInputs = {
+  id?: any,
   name: string,
   description: string
 }

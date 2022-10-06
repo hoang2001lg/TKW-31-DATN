@@ -6,7 +6,7 @@ type ProductRemove = {
     onRemove : (id:number) => void
 }
 
-const List = (props : ProductRemove)=>{
+const ListProduct = (props : ProductRemove)=>{
     return(
         <div>
             <h2 className='mx-auto text-blue-600 text-4xl'>Danh sách gói tập</h2>
@@ -86,4 +86,4 @@ const List = (props : ProductRemove)=>{
 
     )
 }
-export default List
+export default ListProduct

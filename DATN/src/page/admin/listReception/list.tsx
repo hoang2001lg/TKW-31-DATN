@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Receptionists } from "../../../type/receptionists";
+import { Receptionists } from "../../../Type/receptionists";
 type ReceptionistRemove = {
     receptions : Receptionists[];
-    onRemove : (id:number) => void
+    onRemoveRep : (id:number) => void
 }
 
 const List = (props : ReceptionistRemove)=>{
@@ -50,7 +50,7 @@ const List = (props : ReceptionistRemove)=>{
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {props.receptions.map((item, index) => {
+                                    {props.receptions.map((item: any, index) => {
                                         return <tr>
                                             <td className='border text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap'>{index + 1}</td>
                                             <td className='border text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap'>{item.name}</td>
@@ -62,7 +62,7 @@ const List = (props : ReceptionistRemove)=>{
                                             <td className='border text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap'>{item.job}</td>
                                                <div className="mt-4">
                                                <Link className='rounded-md bg-blue-400 text-white mt-20 mr-2' to={`/receptions/${item.id}/edit`}>UPDATE</Link>
-                                               <button className="bg-red-500 text-white" onClick={() => props.onRemove(item.id)}>DELETE</button>
+                                               <button className="bg-red-500 text-white" onClick={() => props.onRemoveRep(item.id)}>DELETE</button>
 
                                                </div>
                                         </tr>
