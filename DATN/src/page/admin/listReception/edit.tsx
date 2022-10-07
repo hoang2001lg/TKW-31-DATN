@@ -5,7 +5,7 @@ import { read } from '../../../api/receptionists';
 
 
 type EditProps = {
-    onUpdate:(reception:Input)=>void
+    onUpdateRep:(reception:Input)=>void
   }
 
 type Input = {
@@ -35,7 +35,7 @@ const Edit = (props: EditProps) => {
       getReceptionists();
   },[])
   const onSubmit :SubmitHandler<Input> = data =>{
-    props.onUpdate(data)
+    props.onUpdateRep(data)
     navigate('/receptions')
 
   }

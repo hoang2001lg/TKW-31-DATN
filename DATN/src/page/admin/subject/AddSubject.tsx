@@ -4,7 +4,7 @@ import { useForm,SubmitHandler } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { TypeSubject } from '../../../Type/TypeSubject'
 type AddSubjectProps = {
-  onAddSubject: (subject: TypeSubject) => void,
+  onAddSubject: (subject: formInput) => void,
 }
 type formInput = {
   name: string,
@@ -12,10 +12,10 @@ type formInput = {
 }
 const Addsubject = (props: AddSubjectProps) => {
   const { register, handleSubmit, formState: { errors } } = useForm<formInput>();
-  const navitage = useNavigate();
-  const onSubmit: SubmitHandler<formInput> = (data: TypeSubject) => {
+  const navigate = useNavigate();
+  const onSubmit: SubmitHandler<formInput> = (data: any) => {
     props.onAddSubject(data)
-    navitage("/admin/subject");
+    navigate("/subject");
   }
   return (
     <Form action='' onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: '1200px', margin: 'auto' }}>

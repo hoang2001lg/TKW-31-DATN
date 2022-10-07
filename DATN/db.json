@@ -1,6 +1,5 @@
 {
 
-
   "receptions": [
     {
       "name": "Lê Viết Thi",
@@ -19,7 +18,7 @@
       "age": "20",
       "img": "https://res.cloudinary.com/dixysmopg/image/upload/v1648828658/4_gjmyxe.jpg",
       "address": "hanoi",
-      "job": "receptionist",
+      "job": "receptionist 1",
       "id": 2
     },
     {
@@ -59,20 +58,20 @@
       "phone": "0334671315",
       "age": "20",
       "address": "hanoi",
-      "job": "nhân viên it",
+      "job": "nhân viên it nè",
       "id": 6
     },
     {
       "name": "Mai Văn Minh",
       "age": "20",
-      "img": "https://res.cloudinary.com/dixysmopg/image/upload/v1648828658/4_gjmyxe.jpg",
-      "code": "13062002",
+      "img": "https://cdn.cet.edu.vn/wp-content/uploads/2018/09/thuc-don-an-vat.jpg",
+      "code": "17968",
       "phone": "0977187559",
       "address": "phú diễn bắc từ liêm hà nội",
-      "job": "nhân vien lễ tân",
-      "id": 9
-      }
-      ],
+      "job": "IT Worker",
+      "id": 7
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -81,7 +80,7 @@
       "category": "Có PT",
       "price": "1400",
       "price_sale": "1000",
-      "act": "hoạt động 3 ngày trên 1 tuần"
+      "act": "hoạt động 3 ngày trên 1 tuần nhé!! haha"
     },
     {
       "id": 2,
@@ -90,7 +89,7 @@
       "category": "Có PT",
       "price": 2800,
       "price_sale": 2400,
-      "act": "hoạt động 5 ngày trên 1 tuần"
+      "act": "hoạt động 5 ngày trên 1 tuần nhé"
     },
     {
       "id": 3,
@@ -99,7 +98,7 @@
       "category": "Có PT",
       "price": 4200,
       "price_sale": 3800,
-      "act": "hoạt động 3 ngày trên 1 tuần"
+      "act": "hoạt động 3 ngày trên 1 tuần nhé hehe"
     },
     {
       "id": 4,
@@ -108,7 +107,7 @@
       "category": "Có PT",
       "price": 1600,
       "price_sale": 1300,
-      "act": "hoạt động 3 ngày trên 1 tuần"
+      "act": "hoạt động 3 ngày trên 1 tuần nhé"
     },
     {
       "id": 5,
@@ -117,23 +116,52 @@
       "category": "Có PT",
       "price": 3200,
       "price_sale": 2400,
-      "act": "hoạt động 3 ngày trên 1 tuần"
+      "act": "hoạt động 3 ngày trên 1 tuần nhé"
     },
     {
-      "id": 6,
-      "name": "Gói 90 ngày",
-      "subject": "Gym",
+      "name": "kick boxing",
+      "subject": "Boxing",
       "category": "Có PT",
-      "price": 4800,
-      "price_sale": 3000,
-      "act": "hoạt động 3 ngày trên 1 tuần"
+      "price": "132133",
+      "price_sale": "15000",
+      "act": "quá ok luôn",
+      "id": 6
     }
-  ]
+  ],
   "subjects": [
     {
       "name": "iPhone 13 Pro Max 128GB ",
       "id": 2
+    },
+    {
+      "name": "boxing",
+      "id": 3
+    },
+    {
+      "name": "boxing",
+      "id": 4
+    }
+  ],
+  "Coachs": [
+    {
+      "name": "maivanminh",
+      "telephone": "12345",
+      "address": "phu tho",
+      "email": "minhmai13@gmail.com",
+      "subject": "Boxing",
+      "stasus": "đang làm việc",
+      "action": "1 vs 1",
+      "id": 2
+    },
+    {
+      "name": "tú bầu",
+      "telephone": "123456",
+      "address": "lạng sơn",
+      "email": "tu123@gmail.com",
+      "subject": "Boxing",
+      "stasus": "đang làm việc",
+      "action": "1 vs 1",
+      "id": 3
     }
   ]
-    "Coachs":[]
 }

@@ -4,10 +4,11 @@ import { CoachType } from '../../../Type/CoachType';
 type CoachManagerProps = {
   coachs: CoachType[];
 
-  onRemove: (id: number) => void
+  onRemoveCoach: (id: number) => void
+
 }
 
-const List = (props:CoachManagerProps) => {
+const ListCoach = (props:CoachManagerProps) => {
   return (
     <div>
       <table className="table table-bordered">
@@ -36,13 +37,16 @@ const List = (props:CoachManagerProps) => {
                 <td>{item.stasus}</td>
                 <td>{item.action}</td>
                 <td>
-                <Link to={`/admin/coach/${item.id}/edit`}>Edit</Link>
-                <button onClick={() => props.onRemove(item.id)}>Remove</button></td>
+                <Link to={`${item.id}/edit`}>Edit</Link>
+                <button onClick={() => props.onRemoveCoach(item.id)}>Remove</button></td>
             </tr>
           })}
         </tbody>
       </table>
+      <div className="">
+            <button className=' bg-green-500 text-white ml-10' ><a href="coach/add">ADD NEW</a></button>
+            </div>
     </div>
   )
 }
-export default List
+export default ListCoach

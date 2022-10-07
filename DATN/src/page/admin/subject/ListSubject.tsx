@@ -5,8 +5,8 @@ import { TypeSubject } from '../../../Type/TypeSubject';
 
 
 type ListSubject = {
-  subjects: TypeSubject,
-  onRemovee: (category: TypeSubject) => void
+  subjects: TypeSubject[],
+  onRemove: (id:any) => void
 }
 function ListSubject(props: ListSubject) {
   return (
@@ -21,13 +21,13 @@ function ListSubject(props: ListSubject) {
           </tr>
         </thead>
         <tbody>
-        {props.subjects?.map((item, index) => {
+        {props.subjects?.map((item: any, index) => {
             return <tr key={index}>
               <td>{index + 1}</td>
               <td>{item.name}</td>
               <td>
               <Link to={`/admin/subject/${item.id}/edit`}><button >Sửa</button></Link>
-                <button style={{ marginLeft: '10px' }} onClick={() => props.onRemovee(item.id)} >Xóa</button>
+                <button style={{ marginLeft: '10px' }} onClick={() => props.onRemove(item.id)} >Xóa</button>
               </td>
             </tr>
           })}

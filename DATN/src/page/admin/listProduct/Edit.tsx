@@ -1,11 +1,12 @@
 import React,{useEffect} from 'react'
 import {useForm,SubmitHandler}  from 'react-hook-form'
 import { useNavigate, useParams } from "react-router-dom";
-import { read } from '../../../api/product';
+import { readproduct } from '../../../api/product';
+
 
 
 type EditProps = {
-    onUpdate:(reception:Input)=>void
+    onUpdate:(products:Input)=>void
   }
 
 type Input = {
@@ -18,7 +19,7 @@ type Input = {
 }
 
 
-const Edit = (props: EditProps) => {
+const EditProduct = (props: EditProps) => {
 
   const {register,handleSubmit,formState:{errors},reset} = useForm<Input>();
   const {id} = useParams();
@@ -26,7 +27,7 @@ const Edit = (props: EditProps) => {
 
   useEffect(()=>{
       const getReceptionists= async()=>{
-          const{data}= await read(id);
+          const{data}= await readproduct(id);
           reset(data)
 
 
@@ -85,4 +86,4 @@ const Edit = (props: EditProps) => {
   )
 }
 
-export default Edit
+export default EditProduct

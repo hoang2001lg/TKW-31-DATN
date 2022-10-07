@@ -13,7 +13,7 @@ export const addSubject = (subject: TypeSubject) => {
     const url = `/subjects`;
     return instance.post(url, subject);
 }
-export const readSubject = (id: number) => {
+export const readSubject = (id: any) => {
     const url = `/subjects/${id}`;
     return instance.get(url);
 }

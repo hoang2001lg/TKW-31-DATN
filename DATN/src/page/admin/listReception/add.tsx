@@ -13,7 +13,7 @@ type Input = {
 }
 
 type AddProps = {
-  onAdd: (receptions: Input) => void
+  onAddRep: (receptions: Input) => void
 }
 
 const Add = (props: AddProps) => {
@@ -22,7 +22,7 @@ const Add = (props: AddProps) => {
   const navigate = useNavigate()
 
   const onSubmit: SubmitHandler<Input> = (dataInput) => {
-    props.onAdd(dataInput)
+    props.onAddRep(dataInput)
     navigate('/receptions')
 
   }

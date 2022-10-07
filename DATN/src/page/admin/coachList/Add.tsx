@@ -14,14 +14,17 @@ type Inputs = { // kiểu dữ liệu của từng input
 };
 
 type CoachsAddProps = {
+  onAddCoach: (coachs: Inputs) => void
+}
+const AddCoach = (props: CoachsAddProps) => {
   onAdd: (coachs: Inputs) => void
 }
 const Add = (props: CoachsAddProps) => {
   const { register, handleSubmit, formState: { errors}} = useForm<Inputs>()
   const navigate = useNavigate()
   const onSubmit: SubmitHandler<Inputs>  = (dataInput) => {
-      props.onAdd(dataInput);
-      navigate("/admin/coach/list");
+      props.onAddCoach(dataInput);
+      navigate("/coach");
   }
 return (
   <div>
@@ -39,4 +42,4 @@ return (
 )
 }
 
-export default Add
+export default AddCoach
