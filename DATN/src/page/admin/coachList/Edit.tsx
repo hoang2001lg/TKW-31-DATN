@@ -6,6 +6,7 @@ import { CoachType } from '../../../Type/CoachType';
 type CoachEditProps = {
   onUpdateCoach: (coachs: CoachType) => void
 
+
 }
 type FormInputs = {
   name: string,

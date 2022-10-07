@@ -17,6 +17,9 @@ type CoachsAddProps = {
   onAddCoach: (coachs: Inputs) => void
 }
 const AddCoach = (props: CoachsAddProps) => {
+  onAdd: (coachs: Inputs) => void
+}
+const Add = (props: CoachsAddProps) => {
   const { register, handleSubmit, formState: { errors}} = useForm<Inputs>()
   const navigate = useNavigate()
   const onSubmit: SubmitHandler<Inputs>  = (dataInput) => {

@@ -5,6 +5,7 @@ type CoachManagerProps = {
   coachs: CoachType[];
 
   onRemoveCoach: (id: number) => void
+
 }
 
 const ListCoach = (props:CoachManagerProps) => {
