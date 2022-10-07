@@ -15,7 +15,7 @@ const Addsubject = (props: AddSubjectProps) => {
   const navigate = useNavigate();
   const onSubmit: SubmitHandler<formInput> = (data: any) => {
     props.onAddSubject(data)
-    navigate("/admin/subject");
+    navigate("/subject");
   }
   return (
     <Form action='' onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: '1200px', margin: 'auto' }}>

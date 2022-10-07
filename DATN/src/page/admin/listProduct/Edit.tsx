@@ -6,7 +6,7 @@ import { readproduct } from '../../../api/product';
 
 
 type EditProps = {
-    onUpdate:(reception:Input)=>void
+    onUpdate:(products:Input)=>void
   }
 
 type Input = {

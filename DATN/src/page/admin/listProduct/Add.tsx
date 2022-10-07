@@ -12,7 +12,7 @@ type Input = {
 }
 
 type AddProps = {
-  onAdd: (receptions: Input) => void
+  onAdd: (products: Input) => void
 }
 
 const AddProduct = (props: AddProps) => {

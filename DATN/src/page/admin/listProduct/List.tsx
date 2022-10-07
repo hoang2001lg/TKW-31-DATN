@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ProductType } from "../../../types/Product";
+import { ProductType } from "../../../Type/Product";
 type ProductRemove = {
     products : ProductType[];
     onRemove : (id:number) => void
@@ -44,7 +44,7 @@ const ListProduct = (props : ProductRemove)=>{
                   </tr>
                 </thead>
                 <tbody>
-                {props.products.map((item, index) => (
+                {props.products.map((item:any, index) => (
                     <tr key={index} className="border-solid	">
                       <td className=" px-6 py-4 whitespace-nowrap text-base font-medium text-gray-900 border" >{item.id}</td>
                       <td className="text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap border">
@@ -66,7 +66,7 @@ const ListProduct = (props : ProductRemove)=>{
                         {item.act}
                       </td>
                       <td className='border '>
-                      <Link className='bg-blue-900 px-2 py-2 text-center rounded-full hover:bg-violet-600 text-white mx-6' to={`/products/${item.id}/edit`}>Edit</Link>
+                      <Link className='bg-blue-900 px-2 py-2 text-center rounded-full hover:bg-violet-600 text-white mx-6' to={`${item.id}/edit`}>Edit</Link>
                       <button className="bg-yellow-600 px-2 py-2 text-center rounded-full hover:bg-red-600 text-white mx-4" onClick={() => props.onRemove(item.id)}>DELETE</button>
                       </td>
                     </tr>

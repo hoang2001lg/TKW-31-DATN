@@ -1,4 +1,4 @@
-import { ProductType } from "../types/Product";
+import { ProductType } from "../Type/Product";
 import instance from "./instance";
 export const addproduct = (product:ProductType)=>{
     const url = '/products';

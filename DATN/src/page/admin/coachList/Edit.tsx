@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
-import { read } from '../../../api/Coach';
+import { readCoach } from '../../../api/Coach';
 import { CoachType } from '../../../Type/CoachType';
 type CoachEditProps = {
-  onUpdate: (coachs: CoachType) => void
+  onUpdateCoach: (coachs: CoachType) => void
 
 }
 type FormInputs = {
@@ -17,22 +17,22 @@ type FormInputs = {
   action: string
 }
 
-const Edit = (props: CoachEditProps) => {
+const EditCoach = (props: CoachEditProps) => {
   const { register, handleSubmit, formState: {errors}, reset} = useForm<FormInputs>();
     const { id } = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
-        const getProduct = async () => {
-            const { data } = await read(id);
+        const getCoach = async () => {
+            const { data } = await readCoach(id);
             reset(data);
         }
-        getProduct();
+        getCoach();
     },[]);
 
     const onSubmit: SubmitHandler<FormInputs> = data => {
-        props.onUpdate(data)
-        navigate("/admin/product");
+        props.onUpdateCoach(data)
+        navigate("/coach");
     }
   return (
     <div>
@@ -50,4 +50,4 @@ const Edit = (props: CoachEditProps) => {
   )
 }
 
-export default Edit
+export default EditCoach

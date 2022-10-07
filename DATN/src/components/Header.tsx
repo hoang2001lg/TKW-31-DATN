@@ -14,11 +14,7 @@ type Props = {}
 
 const Header = (props: Props) => {
   return (
-<<<<<<< HEAD
     <>
-=======
-
->>>>>>> c437a30d09fa539b5d063a2400719e51fd534878
     <div>
       {/* Offcanvas Menu Section Begin */}
       <div className="offcanvas-menu-overlay" />
