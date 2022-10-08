@@ -1,5 +1,4 @@
 {
-
   "receptions": [
     {
       "name": "Lê Viết Thi",
@@ -117,15 +116,6 @@
       "price": 3200,
       "price_sale": 2400,
       "act": "hoạt động 3 ngày trên 1 tuần nhé"
-    },
-    {
-      "name": "kick boxing",
-      "subject": "Boxing",
-      "category": "Có PT",
-      "price": "132133",
-      "price_sale": "15000",
-      "act": "quá ok luôn",
-      "id": 6
     }
   ],
   "subjects": [

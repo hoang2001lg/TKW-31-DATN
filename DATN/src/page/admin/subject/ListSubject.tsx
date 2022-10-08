@@ -26,7 +26,7 @@ function ListSubject(props: ListSubject) {
               <td>{index + 1}</td>
               <td>{item.name}</td>
               <td>
-              <Link to={`/admin/subject/${item.id}/edit`}><button >Sửa</button></Link>
+              <Link to={`${item.id}/edit`}><button >Sửa</button></Link>
                 <button style={{ marginLeft: '10px' }} onClick={() => props.onRemove(item.id)} >Xóa</button>
               </td>
             </tr>

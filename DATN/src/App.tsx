@@ -1,20 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-
-import { add, list, remove, update } from './api/Coach'
-import './App.css'
 import AdminLayout from './layout/AdminLayout'
 import WebsiteLayout from './layout/WebsiteLayout'
 import DashBoard from './page/admin/DashBoard'
-import List from './page/admin/coachList/List'
-import Add from './page/admin/coachList/Add'
-import Edit from './page/admin/coachList/Edit'
-import HomePage from './page/HomePage'
-import { CoachType } from './Type/CoachType'
-import { add, list, remove, update } from './api/product'
 import './App.css'
-import AdminLayout from './layout/AdminLayout'
-import WebsiteLayout from './layout/WebsiteLayout'
 import AddProduct from './page/admin/listProduct/Add'
 import EditProduct from './page/admin/listProduct/Edit'
 import HomePage from './page/HomePage'
@@ -36,34 +25,7 @@ import { addCoach, listCoach, removeCoach, updateCoach } from './api/Coach'
 import ListCoach from './page/admin/coachList/List'
 import AddCoach from './page/admin/coachList/Add'
 import EditCoach from './page/admin/coachList/Edit'
-function App() {
-  const [Coachs, setProducts] = useState<CoachType[]>([])
-  useEffect(() => {
-    const getProducts = async () => {
-        const { data } = await list();
-        setProducts(data);
-    }
-    getProducts();
-  }, []);
-
-  const onHandleAdd = async (product: any) => {
-    const {data} = await add(product);
-    setProducts([...Coachs, data]);
-  }
-  const onHandleRemove = async (id: number) => {
-    remove(id);
-    setProducts(Coachs.filter(item => item.id !== id));
-  }
-  const onHandleUpdate = async (coachs: CoachType) => {
-    try {
-       const {data} = await update(coachs);
-       setProducts(Coachs.map(item => item.id === data.id ? coachs : item))
-    } catch (error) {
-      
-    }
-  }
-
-
+import Contact from './page/Contact'
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [receptions, setReceptions] = useState<Receptionists[]>([])
@@ -174,54 +136,35 @@ function App() {
       <Routes>
         <Route path='/' element={< WebsiteLayout />} >
           <Route index element={<HomePage />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
         {/* admin */}
         <Route path="admin" element={< AdminLayout />}>
           {/* receptionist in admin */}
-          <Route path="receptions">
+        </Route>
+        <Route path="/receptions">
             <Route index element={<List receptions={receptions} onRemoveRep={onHandleremoveRep} />} />
             <Route path='add' element={<Add onAddRep={onhandlerAddRep} />} />
             <Route path=':id/edit' element={<Edit onUpdateRep={onHandlerUpdateRep} />} />
           </Route>
           {/* product in admin */}
-          <Route path="products">
+          <Route path="/products">
             <Route index element={<ListProduct products={products} onRemove={onHandleremove} />} />
             <Route path='add' element={<AddProduct onAdd={onhandlerAdd} />} />
             <Route path=':id/edit' element={<EditProduct onUpdate={onHandlerUpdate} />} />
-        <Routes>
-          <Route path='/' element={< WebsiteLayout/>} >
-              <Route index  element={<HomePage/>} />
-          </Route>
-          <Route path="/admin" element={< AdminLayout />}>
-              <Route index element = {< DashBoard />} />
-              <Route path='/admin/coach/list' element={<List onRemove={onHandleRemove} products={[]} />}/>
-              <Route path='/admin/coach/add' element={<Add onAdd={onHandleAdd} />}/>
-              <Route path='/admin/coach/:id/edit' element={<Edit onUpdate={onHandleUpdate} />}/>
-          </Route>
-          <Route path="/receptions">
-          <Route index element={<List receptions={receptions} onRemove={onHandleremove} />} /> 
-          </Route>
-          <Route path='receptions/add' element={<Add onAdd={onhandlerAdd}/>}/> 
-          <Route path='receptions/:id/edit' element={<Edit onUpdate={onHandlerUpdate}/>}/> 
-          <Route path="/products">
-          <Route path='/admin' element={ <AdminLayout />}> 
-
-          </Route>
-          <Route index element={<ProductList products={products} onRemove={onHandleremove} />} /> 
-          </Route>
+            </Route>
           {/* subject in admin */}
-          <Route path='subject'>
+          <Route path='/subject'>
             <Route index element={<ListSubject subjects={subjects} onRemove={onHandleRemoveSubject} />} />
             <Route path='add' element={<Addsubject onAddSubject={onHandleAddSubject} />} />
             <Route path=':id/edit' element={<Editsubject onUpdateSubject={onHandleUpdateSubject} />} />
           </Route>
           {/* coach in admin */}
-          <Route path='coach'>
+          <Route path='/coach'>
             <Route index element={<ListCoach coachs={Coachs} onRemoveCoach={onHandleRemoveCoach} />} />
             <Route path='add' element={<AddCoach onAddCoach={onHandleAddCoach} />} />
             <Route path=':id/edit' element={<EditCoach onUpdateCoach={onHandleUpdateCoach} />} />
           </Route>
-        </Route>
       </Routes>
     </div>
   )

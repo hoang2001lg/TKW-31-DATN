@@ -27,7 +27,7 @@ const Editsubject = (props: UpdateSubjectProps) => {
   }, [])
   const onSubmit: SubmitHandler<FormInputs> = data => {
     props.onUpdateSubject(data);
-    navigate("/admin/subject");
+    navigate("/subject");
   }
   return (
     <div>
