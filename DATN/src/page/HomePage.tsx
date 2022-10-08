@@ -1,12 +1,4 @@
 import React from 'react'
-import "../templace/css/bootstrap.min.css";
-import "../templace/css/font-awesome.min.css";
-import "../templace/css/flaticon.css";
-import "../templace/css/owl.carousel.min.css";
-import "../templace/css/barfiller.css";
-import "../templace/css/magnific-popup.css";
-import "../templace/css/slicknav.min.css";
-import "../templace/css/style.css";
 import ImgBanner from "../templace/img/hero/hero-2.jpg"
 type Props = {}
 
@@ -102,50 +94,14 @@ const HomePage = (props: Props) => {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-4 col-md-6">
-              <div className="class-item">
-                <div className="ci-pic">
-                  <img src="img/classes/class-1.jpg" alt='' />
-                </div>
-                <div className="ci-text">
-                  <span>STRENGTH</span>
-                  <h5>Weightlifting</h5>
-                  <a href="#"><i className="fa fa-angle-right" /></a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="class-item">
-                <div className="ci-pic">
-                  <img src="img/classes/class-2.jpg" alt='' />
-                </div>
-                <div className="ci-text">
-                  <span>Cardio</span>
-                  <h5>Indoor cycling</h5>
-                  <a href="#"><i className="fa fa-angle-right" /></a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="class-item">
-                <div className="ci-pic">
-                  <img src="img/classes/class-3.jpg" alt='' />
-                </div>
-                <div className="ci-text">
-                  <span>STRENGTH</span>
-                  <h5>Kettlebell power</h5>
-                  <a href="#"><i className="fa fa-angle-right" /></a>
-                </div>
-              </div>
-            </div>
             <div className="col-lg-6 col-md-6">
               <div className="class-item">
                 <div className="ci-pic">
-                  <img src="img/classes/class-4.jpg" alt='' />
+                  <img src={ImgBanner} alt='' />
                 </div>
                 <div className="ci-text">
                   <span>Cardio</span>
-                  <h4>Indoor cycling</h4>
+                  <h4>GYM</h4>
                   <a href="#"><i className="fa fa-angle-right" /></a>
                 </div>
               </div>
@@ -153,11 +109,11 @@ const HomePage = (props: Props) => {
             <div className="col-lg-6">
               <div className="class-item">
                 <div className="ci-pic">
-                  <img src="img/classes/class-5.jpg" alt='' />
+                  <img src={ImgBanner} alt='' />
                 </div>
                 <div className="ci-text">
                   <span>Training</span>
-                  <h4>Boxing</h4>
+                  <h4>BOXING</h4>
                   <a href="#"><i className="fa fa-angle-right" /></a>
                 </div>
               </div>
@@ -167,7 +123,7 @@ const HomePage = (props: Props) => {
       </section>
       {/* ChoseUs Section End */}
       {/* Banner Section Begin */}
-      <section className="banner-section set-bg" data-setbg="img/banner-bg.jpg">
+      <section className="banner-section set-bg" data-setbg={{ImgBanner}}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">

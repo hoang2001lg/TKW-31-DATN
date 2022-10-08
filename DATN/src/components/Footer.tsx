@@ -1,12 +1,4 @@
 import React from 'react'
-import "../templace/css/bootstrap.min.css";
-import "../templace/css/font-awesome.min.css";
-import "../templace/css/flaticon.css";
-import "../templace/css/owl.carousel.min.css";
-import "../templace/css/barfiller.css";
-import "../templace/css/magnific-popup.css";
-import "../templace/css/slicknav.min.css";
-import "../templace/css/style.css";
 import LogoWebSite from '../templace/img/logo.png'
 type Props = {}
 

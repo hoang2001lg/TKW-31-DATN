@@ -6,7 +6,7 @@ import { readSubject } from '../../../api/subject'
 import { TypeSubject } from '../../../Type/TypeSubject';
 
 type UpdateSubjectProps = {
-  onUpdateSubject: (subject: TypeSubject) => void
+  onUpdateSubject: (subject: TypeSubject[]) => void
 }
 type FormInputs = {
   name: string,

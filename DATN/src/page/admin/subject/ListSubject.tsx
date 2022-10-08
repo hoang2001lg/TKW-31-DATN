@@ -5,8 +5,8 @@ import { TypeSubject } from '../../../Type/TypeSubject';
 
 
 type ListSubject = {
-  subjects: TypeSubject,
-  onRemovee: (category: TypeSubject) => void
+  subjects: TypeSubject[],
+  onRemovee: (category: TypeSubject[]) => void
 }
 function ListSubject(props: ListSubject) {
   return (

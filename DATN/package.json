@@ -16,7 +16,8 @@
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.36.1",
-    "react-router-dom": "^6.4.1"
+    "react-router-dom": "^6.4.1",
+    "swiper": "^8.4.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
